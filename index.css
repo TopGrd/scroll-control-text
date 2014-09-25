@@ -1,0 +1,28 @@
+#parent{
+	width:20px;
+	height:200px;
+	background:#ccc;
+	position:relative;
+	margin-left:300px;
+}
+#div1{
+	width:20px;
+	height:20px;
+	background:red;
+	position:absolute;
+}
+#div3{
+	height:200px;
+	width:200px;
+	position:relative;
+	float:left;
+	border:1px solid blue;
+	overflow:hidden;
+	background:#999;
+}
+#div2{
+
+	top :0;
+	left :0;
+	position:relative;
+}

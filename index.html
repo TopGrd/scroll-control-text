@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>RunJS</title>
+    <link rel="stylesheet" href=" index.css">
+</head>
+
+<body>
+    <div id="div3">
+        <div id="div2">
+
+
+            最近天气不错，天高气爽，凉风习习，这对于还处在夏天阶段的南方来说，实属难得。晚上结束了10km的运动全程，回到宿舍洗了一个舒舒服服的热水澡，舒缓了一天的疲劳，神清气爽，懒洋洋地躺在床上码字，心里还在不住的感慨，啊，生活是如此的美好… 前几天和一朋友聊到跑步健身的话题吧，我洋洋得意地宣布自己现在已经可以气不喘地跑完10km了。朋友估计被我震撼了，半天无语，最后蹦出一句：“你太强悍了…” 我傲娇地回：“不要这么说嘛，我一直都很淑女的好不？”朋友笑骂，“那是被你柔弱的外表欺骗了！” 我笑，不置可否。 坚持长跑已经将近有半年了，只要不是下雨，天气允许的情况下，每天晚上我都会跑上6~10km。也许对大多数跑友来说，这么长的路程并没有什么，可是对于一个半年前八百米体测还是噩梦的我来说，无疑是从来都不敢想的。 真的，现在有时候想想都觉得有点不可思议，可是又觉得理所当然。想起自己最初练习时的那段痛苦时光，腿酸、腹痛各种身体不适，跑跑停停再继续，一路走来，跌跌撞撞，所幸都坚持下来了。有时候想想都挺为自己感动的，似乎，这个世界上真的没有多少事情是不可能的，只要你努力地、用心地去做，那么最终你可以打败那个曾经的你。 最初练习跑步的动机是什么，似乎都有点记不清了。好像是因为临近体测而跑去练习八百米，结果不小心将膝盖韧带拉伤了。当时情形还挺严重，连行动都得靠痛苦地扶墙缓慢移动才行，更别提上下楼梯了，缺了一个多星期的课，最后的体测还是申请缓测的。而医生的诊断是“长久不运动而导致的膝盖韧带僵硬，突然过量运动使韧带强制摩擦受伤…”，因为这件事当时被很多损友嘲笑，心中不服气，于是踏上了最初的长跑之路。 后来呢？似乎是因为某个人，某个承诺，答应了要好好锻炼身体不再让自己生病。再后来，是将这项运动视为排泄情绪的一种方式，让所有不好的情绪都在不断地奔跑中随汗水一道流走。再再后来呢？好像已经不需要理由了。在经历了那么多漫长、枯燥、机械的重复之后，单单爱上了了这项运动而已。每个夜晚，换上跑鞋，戴上耳机，感受着那种精神上全然放空的状态，思绪越来越清晰，头脑也越来越清醒，很多想不明白的事情瞬间都通了。于是在这个不断机械重复的过程中，理清一天的思绪，想想今天做了哪些事情，任务都完成了没有，明天需要做哪些事情，应该如何去做。每次感受到自己的身体源源不断地向外散发着热量的时候，都前所未有的体会到了生命赐予我们的力量，这是一种无法言明的快乐和满足。 曾经听说过一句话，长跑不仅在于健体，更在于健心。我想每一个跑友对此句话的理解都应该是感触颇深的。这项被称作最简单，最没有技术含量的运动，它教会了我们什么叫做坚持，什么叫做力量，什么叫做简单的快乐。 愿你我都能有一个坚持的、有力的、简单的快乐人生。
+        </div>
+
+    </div>
+    <div id="parent">
+        <div id="div1">
+
+        </div>
+    </div>
+</body>
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    var oParent = document.getElementById('parent');
+    oDiv1.onmousedown = function (ev) {
+        var y = 0;
+        var oE = ev || event;
+        y = oE.clientY - oDiv1.offsetTop;
+        document.onmousemove = function (ev) {
+            var oE = ev || event;
+            var t = oE.clientY - y;
+            if (t < 0) {
+                t = 0;
+            } else if (t > oParent.offsetHeight - oDiv1.offsetHeight) {
+                t = oParent.offsetHeight - oDiv1.offsetHeight;
+            }
+            oDiv1.style.top = t + 'px';
+            var s = t / (oParent.offsetHeight - oDiv1.offsetHeight);
+            oDiv2.style.top = -s * (oDiv2.offsetHeight - oDiv3.offsetHeight) + 'px';
+        }
+        document.onmouseup = function () {
+            document.onmousedown = null;
+            document.onmousemove = null;
+        }
+    }
+</script>
+
+</html>
